@@ -22,25 +22,36 @@ navLinks.forEach(link => {
     });
 });
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     const timestamp = new Date().getTime();
 
-    // 1. Tworzymy iframe z timestampem
+    // 1. Kontener iframe
+    const iframeContainer = document.getElementById('iframe-container');
+    if(!iframeContainer) return;
+
+    // 2. Tworzymy iframe z timestampem
     const iframe = document.createElement('iframe');
     iframe.src = 'https://hayakon.github.io/github-pages-demo/?t=' + timestamp;
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     iframe.style.border = 'none';
     iframe.style.overflow = 'hidden';
-    document.getElementById('iframe-container').appendChild(iframe);
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('scrolling', 'no');
+    iframe.setAttribute('loading', 'lazy'); // szybsze wczytywanie
 
-    // 2. Dodajemy timestamp do wszystkich linków do plików HTML
+    // Dodajemy iframe do kontenera
+    iframeContainer.appendChild(iframe);
+
+    // 3. Dodajemy timestamp do wszystkich linków do plików HTML (podstrony)
     document.querySelectorAll('a[href$=".html"]').forEach(link => {
         let href = link.getAttribute('href');
-        if(!href.includes('?')) {
-            link.setAttribute('href', href + '?t=' + timestamp);
-        } else {
-            link.setAttribute('href', href + '&t=' + timestamp);
+        if(href) {
+            if(!href.includes('?')) {
+                link.setAttribute('href', href + '?t=' + timestamp);
+            } else {
+                link.setAttribute('href', href + '&t=' + timestamp);
+            }
         }
     });
 });
