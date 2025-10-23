@@ -23,18 +23,24 @@ navLinks.forEach(link => {
 });
 
 window.addEventListener('DOMContentLoaded', (event) => {
+    const timestamp = new Date().getTime();
+
+    // 1. Tworzymy iframe z timestampem
     const iframe = document.createElement('iframe');
-    iframe.src = 'https://hayakon.github.io/github-pages-demo/?t=' + new Date().getTime();
+    iframe.src = 'https://hayakon.github.io/github-pages-demo/?t=' + timestamp;
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     iframe.style.border = 'none';
     iframe.style.overflow = 'hidden';
     document.getElementById('iframe-container').appendChild(iframe);
-});
 
-document.querySelectorAll('a').forEach(link => {
-    const href = link.getAttribute('href');
-    if(href && href.endsWith('.html')) {
-        link.setAttribute('href', href + '?t=' + new Date().getTime());
-    }
+    // 2. Dodajemy timestamp do wszystkich linków do plików HTML
+    document.querySelectorAll('a[href$=".html"]').forEach(link => {
+        let href = link.getAttribute('href');
+        if(!href.includes('?')) {
+            link.setAttribute('href', href + '?t=' + timestamp);
+        } else {
+            link.setAttribute('href', href + '&t=' + timestamp);
+        }
+    });
 });
