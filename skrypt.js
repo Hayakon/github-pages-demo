@@ -21,3 +21,13 @@ navLinks.forEach(link => {
         }
     });
 });
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://hayakon.github.io/github-pages-demo/?t=' + new Date().getTime();
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = 'none';
+    iframe.style.overflow = 'hidden';
+    document.getElementById('iframe-container').appendChild(iframe);
+});
