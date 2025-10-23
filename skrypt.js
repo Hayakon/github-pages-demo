@@ -31,3 +31,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     iframe.style.overflow = 'hidden';
     document.getElementById('iframe-container').appendChild(iframe);
 });
+
+document.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href');
+    if(href && href.endsWith('.html')) {
+        link.setAttribute('href', href + '?t=' + new Date().getTime());
+    }
+});
