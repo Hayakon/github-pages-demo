@@ -3,21 +3,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 /* Body */
 body {
-    background-color: #0d0d1a; /* ciemne tło */
-    color: #fff;
-    line-height: 1.6;
+    background-color: #f5f6fa; /* delikatnie biały */
+    color: #111; /* prawie czarny tekst */
+    line-height: 1.7;
 }
 
 /* Header */
 header {
-    background-color: #0a0a1a;
+    background: linear-gradient(90deg, #0b132b, #1c2541); /* ciemny niebieski gradient */
     padding: 15px 20px;
-    border-bottom: 2px solid #00f0ff;
+    border-bottom: 3px solid #3a506b;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,9 +25,8 @@ header {
 
 .logo h1 {
     font-size: 2rem;
-    background: linear-gradient(45deg, #00f0ff, #ff00ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
 
 /* Navigation */
@@ -42,49 +41,50 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    color: #a9bcd0;
     padding: 5px 10px;
-    background: linear-gradient(90deg, #00f0ff, #ff00ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    border-radius: 4px;
     transition: 0.3s;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #ff00ff; /* po prostu kolor, bez blur */
-    -webkit-text-fill-color: #ff00ff; /* gradient zastąpiony jednolitym kolorem */
-    border-bottom: 2px solid #ff00ff;
+    background-color: #3a506b;
+    color: #ffffff;
 }
 
 /* Main content */
 main {
-    padding: 40px 20px;
+    padding: 50px 20px;
     max-width: 900px;
     margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
     font-size: 2rem;
-    background: linear-gradient(45deg, #00f0ff, #ff00ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #1c2541;
     margin-bottom: 20px;
+    border-left: 4px solid #3a506b;
+    padding-left: 10px;
 }
 
 p {
     font-size: 1.1rem;
     margin-bottom: 15px;
-    color: #d0d0ff;
+    color: #222;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    border-top: 2px solid #00f0ff;
+    background-color: #0b132b;
+    color: #d0dae5;
     margin-top: 50px;
-    color: #a0d0ff;
     font-size: 0.9rem;
 }
 
@@ -92,27 +92,23 @@ footer {
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
 
     main {
-        padding: 20px 15px;
+        padding: 30px 15px;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .logo h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 }
 
 @media (max-width: 480px) {
-    nav ul {
-        gap: 10px;
-    }
-
     p {
         font-size: 1rem;
     }
