@@ -8,7 +8,7 @@
 
 /* Body */
 body {
-    background: url('tło.jpg') center/cover no-repeat; /* jasne tło z lekkim błękitem */
+    background: url('tło.jpg');
     color: #111;
     line-height: 1.7;
 }
