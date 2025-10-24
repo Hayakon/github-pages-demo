@@ -8,7 +8,9 @@
 
 /* Body */
 body {
-    background: url('tło.jpg');
+    background: url('tło.jpg') no-repeat top center;
+    background-size: cover;
+    min-height: calc(100vh - 80px); /* 80px = wysokość stopki */
     color: #111;
     line-height: 1.7;
 }
