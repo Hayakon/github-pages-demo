@@ -35,9 +35,9 @@ window.addEventListener('DOMContentLoaded', () => {
     iframe.style.width = '100%';
     iframe.style.height = '100%';
     iframe.style.border = 'none';
-    iframe.style.overflow = 'hidden';
+    iframe.style.overflow = 'auto';
     iframe.setAttribute('frameborder', '0');
-    iframe.setAttribute('scrolling', 'no');
+    iframe.setAttribute('scrolling', 'yes');
     iframe.setAttribute('loading', 'lazy'); // szybsze wczytywanie
 
     // Dodajemy iframe do kontenera
