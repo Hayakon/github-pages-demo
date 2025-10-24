@@ -59,7 +59,7 @@ main {
     padding: 50px 20px;
     max-width: 900px;
     margin: 40px auto;
-    background-color: #ffffff;
+    background: url('tło.jpg') center/cover no-repeat;
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
