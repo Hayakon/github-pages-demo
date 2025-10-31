@@ -57,6 +57,39 @@ nav ul li a.active {
     color: #0070c0;
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;       /* wyśrodkowanie ikon */
+    align-items: center;
+    gap: 15px;                     /* odstęp między ikonami */
+    list-style: none;              /* usunięcie kropek listy */
+    padding: 0;
+    margin: 10px 0;
+}
+
+.social-icons a {
+    text-decoration: none;         /* bez podkreślenia */
+    font-size: 1.5rem;             /* wielkość ikon */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);         /* powiększenie po najechaniu */
+    opacity: 0.8;                  /* lekkie przyciemnienie */
+}
+
+.social-icons i {
+    transition: color 0.3s ease;   /* płynna zmiana koloru */
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+}
+
+
 /* Main content */
 main {
     padding: 50px 20px;
